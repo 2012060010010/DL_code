@@ -99,7 +99,7 @@ with tf.Graph().as_default():
         #     int(text_train.shape[1]/ FLAGS.batch_size),    # 过完所有的训练数据需要的迭代次数
         #     FLAGS.learning_rate_decay   # 学习率衰减速度
         # )
-        learning_rate=FLAGS.learning_rate
+        learning_rate = FLAGS.learning_rate
         optimizer = tf.train.AdamOptimizer(learning_rate)
         grads_and_vars = optimizer.compute_gradients(cnn.loss)
         train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
